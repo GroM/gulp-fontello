@@ -1,6 +1,6 @@
 {
   "name": "gulp-fontello",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "description": "Import svg files to Fontello icon font project, use svg filename as glyph name. Also provide task for auto download exported css and font files into desinated folder.",
   "main": "lib/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gillbeits/gulp-fontello.git"
+    "url": "https://github.com/GroM/gulp-fontello.git"
   },
   "dependencies": {
     "adm-zip": ">=0.4",
@@ -23,17 +23,23 @@
   },
   "keywords": [
     "fontello",
-    "gulp"
+    "gulp",
+    "scss",
+    "sass"
   ],
   "author": {
+    "name": "Jerzy Brzozowski",
+    "email": "grom@codeshield.eu"
+  },
+  "contributors": [{
     "name": "Ivan Koretskiy",
     "email": "gillbeits@gmail.com"
-  },
+  }],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gillbeits/gulp-fontello/issues"
+    "url": "https://github.com/GroM/gulp-fontello/issues"
   },
-  "homepage": "https://github.com/gillbeits/gulp-fontello",
+  "homepage": "https://github.com/GroM/gulp-fontello",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-diff": "^1.0.0",
