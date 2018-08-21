@@ -3,25 +3,44 @@
  */
 
 var
-  gulp = require('gulp'),
-  $ = require('gulp-load-plugins')()
+	gulp = require('gulp'),
+	$ = require('gulp-load-plugins')()
 ;
 
 $.fontello = require('../lib/index.js');
 
 gulp.task('glyph', function () {
-  var failed = false;
-  function onError(error) {
-    failed = true;
-  }
-  return gulp.src('config.json')
-    .pipe($.plumber())
-    .pipe($.fontello())
-    .on('error', onError)
-    .pipe(gulp.dest('dist'))
-    .on('finish', function() {
-      if (failed) {
-        throw new Error('Tests failed');
-      }
-    });
+	var failed = false;
+	function onError(error) {
+		failed = true;
+	}
+	return gulp.src('config.json')
+		.pipe($.plumber())
+		.pipe($.fontello())
+		.on('error', onError)
+		.pipe(gulp.dest('dist'))
+		.on('finish', function() {
+			if (failed) {
+				throw new Error('Tests failed');
+			}
+		});
+});
+
+gulp.task('glyph-scss', function() {
+	var failed = false;
+	function onError(error) {
+		failed = true;
+	}
+	return gulp.src('config.json')
+		.pipe($.plumber())
+		.pipe($.fontello({
+			preprocess: 'scss',
+		}))
+		.on('error', onError)
+		.pipe(gulp.dest('dist'))
+		.on('finish', function() {
+			if (failed) {
+				throw new Error('Tests failed');
+			}
+		});
 });
